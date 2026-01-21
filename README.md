@@ -8,6 +8,6 @@ objetivos:
 -romper cosas
 -subir nivel git 
 
-linea main B
+linea modificada b 
 linea rama A 
 
