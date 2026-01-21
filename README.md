@@ -15,3 +15,4 @@ a ver si aparece conflicto
 Sección PR:
 - Este cambio viene desde una Pull Request.
 
+--cambios para ver en la rama de angular 
