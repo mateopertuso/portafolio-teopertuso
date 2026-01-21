@@ -12,3 +12,6 @@ objetivos:
 linea modificada b 
 a ver si aparece conflicto 
 
+Sección PR:
+- Este cambio viene desde una Pull Request.
+
