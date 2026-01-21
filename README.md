@@ -8,6 +8,7 @@ objetivos:
 -romper cosas
 -subir nivel git 
 
+
 linea modificada b 
-linea rama A 
+a ver si aparece conflicto 
 
