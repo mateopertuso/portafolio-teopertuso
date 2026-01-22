@@ -1,9 +1,92 @@
 <div class="min-h-screen bg-black text-white">
-  <header class="fixed top-0 w-full px-8 py-4">
-    <span class="font-semibold">Teo Pertuso</span>
-  </header>
+  <header class="sticky top-0 z-[100] border-b border-white/10 bg-black/60 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a routerLink="/" class="text-lg font-semibold tracking-tight text-white">
+        Teo<span class="text-blue-500">.</span>
+      </a>
 
-  <main class="pt-24">
+      <!-- Mobile menu button -->
+      <button
+        class="relative z-[110] md:hidden h-8 w-8 flex items-center justify-center text-white"
+        (click)="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        <!-- Hamburger -->
+        <span
+          class="absolute text-xl transition-all duration-600"
+          [class.opacity-0]="isMenuOpen"
+          [class.rotate-45]="isMenuOpen"
+        >
+          ☰
+        </span>
+
+        <!-- Close -->
+        <span
+          class="absolute text-xl transition-all duration-600"
+          [class.opacity-100]="isMenuOpen"
+          [class.opacity-0]="!isMenuOpen"
+          [class.rotate-90]="!isMenuOpen"
+        >
+          ✕
+        </span>
+      </button>
+
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a
+          routerLink="/"
+          routerLinkActive="text-white after:scale-x-100"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
+        >
+          Home
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="text-white after:scale-x-100"
+          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
+        >
+          About
+        </a>
+
+        <a
+          routerLink="/projects"
+          routerLinkActive="text-white after:scale-x-100"
+          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
+        >
+          Projects
+        </a>
+
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-white after:scale-x-100"
+          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+  <!-- Mobile menu overlay -->
+  <div
+    *ngIf="isMenuOpen"
+    class="fixed inset-0 z-[90] bg-black/80 backdrop-blur-sm md:hidden"
+    (click)="closeMenu()"
+  >
+    <div
+      class="absolute top-16 left-0 w-full bg-black border-t border-white/10 animate-slideDown"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="flex flex-col gap-6 px-6 py-8 text-lg">
+        <a routerLink="/" (click)="closeMenu()">Home</a>
+        <a routerLink="/about" (click)="closeMenu()">About</a>
+        <a routerLink="/projects" (click)="closeMenu()">Projects</a>
+        <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="mx-auto max-w-6xl px-4 py-10">
     <router-outlet></router-outlet>
   </main>
 </div>
