@@ -1,5 +1,7 @@
 html,
 body {
     scroll-behavior: smooth;
+    transition: background-color 0.4s ease;
     font-family: Inter, system-ui, sans-serif;
+    scrollbar-gutter: stable;
 }

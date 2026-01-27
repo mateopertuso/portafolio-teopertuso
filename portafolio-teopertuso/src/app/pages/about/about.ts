@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
-  template: '<h2 class="text-3xl font-semibold text-white">About</h2>',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './about.html',
 })
 export class About {}
