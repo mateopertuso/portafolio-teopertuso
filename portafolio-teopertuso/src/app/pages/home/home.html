@@ -3,6 +3,36 @@
   <div
     class="absolute inset-0 z-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900 via-black to-black"
   ></div>
+  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+    <svg
+      class="w-full h-full drop-shadow-[0_0_6px_rgba(59,130,246,0.25)]"
+      viewBox="0 0 1600 900"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- CAPA LEJANA -->
+      <g class="animate-bg-paths opacity-55 blur-[1px] [animation-duration:26s]">
+        <path d="M-300 300 C 200 150, 900 450, 1900 300" stroke="url(#grad)" stroke-width="1.4" />
+        <path d="M-300 420 C 400 260, 800 560, 1900 420" stroke="url(#grad)" stroke-width="1.2" />
+        <path d="M-300 540 C 600 380, 700 680, 1900 540" stroke="url(#grad)" stroke-width="1" />
+      </g>
+
+      <!-- CAPA CERCANA -->
+      <g class="animate-bg-paths opacity-55 [animation-duration:16s]">
+        <path d="M-300 360 C 300 200, 1000 520, 1900 360" stroke="url(#grad)" stroke-width="1.8" />
+        <path d="M-300 480 C 500 320, 900 620, 1900 480" stroke="url(#grad)" stroke-width="1.4" />
+      </g>
+
+      <!-- GRADIENTE -->
+      <defs>
+        <linearGradient id="grad" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#3b82f6" />
+          <stop offset="100%" stop-color="#22d3ee" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
 
   <!-- desktop social -->
   <aside class="fixed left-6 top-1/2 z-50 hidden -translate-y-1/2 md:flex">
