@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment';
 
 @Component({
