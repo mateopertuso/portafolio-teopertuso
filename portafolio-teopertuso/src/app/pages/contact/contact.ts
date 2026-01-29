@@ -42,7 +42,7 @@ export class Contact {
         this.form = { name: '', email: '', subject: '', message: '' };
         this.success = true;
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error('Email error:', error);
         this.error = true;
       })
