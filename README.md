@@ -1,9 +1,15 @@
-# Personal Portfolio :star:
+## 🧩 Portfolio Website
 
-Technologies used:
+Personal portfolio built with Angular and Tailwind CSS.
 
-- Angular
-- Tailwind CSS
+### Tech
+
+- Angular (standalone)
 - TypeScript
+- Tailwind CSS
 
-Bienvenido!
+### Features
+
+- Responsive layout
+- Animated background
+- Modern UI design
