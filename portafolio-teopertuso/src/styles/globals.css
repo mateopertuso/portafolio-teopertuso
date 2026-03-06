@@ -5,3 +5,9 @@ body {
     font-family: Inter, system-ui, sans-serif;
     scrollbar-gutter: stable;
 }
+
+/* active pill visible cuando routerLinkActive agrega la clase */
+a.nav-link.active .active-pill,
+a.nav-link[class*="!text-white"] .active-pill {
+  opacity: 1;
+}
