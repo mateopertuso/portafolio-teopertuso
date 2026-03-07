@@ -1,105 +1,249 @@
-<section class="relative w-full bg-black text-white">
-  <div class="grain pointer-events-none absolute inset-0 z-[80]"></div>
-
+<section
+  class="relative w-full min-h-[calc(100svh-64px)] bg-[#080808] text-white overflow-hidden flex items-center"
+>
+  <!-- Subtle grid background -->
   <div
     class="pointer-events-none absolute inset-0 z-[1]"
     style="
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(30, 60, 120, 0.25) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(15, 30, 80, 0.2) 0%, transparent 60%),
-        radial-gradient(ellipse 100% 100% at 50% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 30, 0.4) 100%);
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
     "
   ></div>
 
-  <aside class="fixed left-6 top-1/2 z-50 hidden -translate-y-1/2 md:flex">
-    <div
-      class="flex flex-col gap-3 rounded-2xl border border-white/8 bg-white/3 p-3 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.5)] animate-fadeInUp"
-    >
-      <ng-container *ngTemplateOutlet="socialIcon; context: { showTooltip: true }"></ng-container>
-    </div>
-  </aside>
+  <!-- Glow top-right -->
+  <div
+    class="pointer-events-none absolute -top-32 right-0 z-[1] w-[600px] h-[600px] rounded-full"
+    style="
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
+      filter: blur(40px);
+    "
+  ></div>
+
+  <!-- Glow bottom-left -->
+  <div
+    class="pointer-events-none absolute bottom-0 -left-32 z-[1] w-[400px] h-[400px] rounded-full"
+    style="
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 65%);
+      filter: blur(40px);
+    "
+  ></div>
 
   <main
-    class="relative z-10 mx-auto max-w-4xl px-6 py-20 flex flex-col gap-16 md:flex-row md:items-center md:justify-between md:min-h-[calc(100svh-75px)] md:py-0"
+    class="relative z-10 mx-auto w-full max-w-6xl px-6 py-20 md:py-0 grid md:grid-cols-2 gap-16 md:gap-8 items-center"
   >
-    <div
-      class="flex flex-col items-center text-center md:items-start md:text-left animate-fadeInUp"
-    >
+    <!-- LEFT: Text content -->
+    <div class="flex flex-col gap-8 animate-fadeInUp">
+      <!-- Status badge -->
       <div
-        class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm"
+        class="inline-flex w-fit items-center gap-2.5 rounded-full px-4 py-1.5"
+        style="background: rgba(52, 211, 153, 0.08); border: 1px solid rgba(52, 211, 153, 0.2)"
       >
         <span
-          class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]"
+          class="h-1.5 w-1.5 rounded-full bg-emerald-400"
+          style="box-shadow: 0 0 8px rgba(52, 211, 153, 0.9)"
         ></span>
-        <span class="text-xs font-light tracking-widest text-white/60 uppercase"
+        <span class="text-xs tracking-widest text-emerald-400/80 uppercase font-medium"
           >Available for work</span
         >
       </div>
-      <h1 class="text-5xl font-bold tracking-tight text-white sm:text-7xl leading-none">
-        Mateo
-        <span
-          class="block sm:inline text-transparent bg-clip-text"
-          style="
-            background-image: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 50%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-          "
-        >
-          Pertuso
-        </span>
-      </h1>
 
-      <p class="mt-6 max-w-lg text-base text-white/40 leading-relaxed text-balance font-light">
-        I am a <span class="text-white/90 font-normal">Software Developer</span> passionate about
-        building innovative, user-centric web applications using modern technologies.
+      <!-- Heading -->
+      <div class="flex flex-col gap-2">
+        <p class="text-sm font-medium tracking-[0.2em] text-white/30 uppercase">
+          Software Developer
+        </p>
+        <h1
+          class="text-6xl sm:text-7xl font-bold tracking-tight leading-[1.05]"
+          style="font-family: 'DM Sans', sans-serif"
+        >
+          Mateo<br />
+          <span
+            style="
+              background: linear-gradient(120deg, #ffffff 0%, #a5b4fc 50%, #60a5fa 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            "
+          >
+            Pertuso
+          </span>
+        </h1>
+      </div>
+
+      <!-- Description -->
+      <p class="max-w-md text-base text-white/40 leading-relaxed font-light">
+        Passionate about building <span class="text-white/80 font-normal">fast, scalable</span> and
+        <span class="text-white/80 font-normal">user-centric</span> web applications with modern
+        technologies.
       </p>
 
-      <div class="mt-10 flex gap-3">
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-3">
         <a
           routerLink="/projects"
-          class="rounded-full bg-white px-7 py-2.5 text-sm font-normal text-black transition-all hover:bg-white/90 tracking-wide"
+          class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-white/90 hover:scale-[1.02]"
         >
-          My Work
+          View my work
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </a>
         <a
           routerLink="/contact"
-          class="rounded-full border border-white/10 bg-white/5 px-7 py-2.5 text-sm font-light text-white/70 transition-all hover:text-white hover:bg-white/10 tracking-wide backdrop-blur-sm"
+          class="inline-flex items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-medium text-white/60 transition-all duration-200 hover:text-white hover:bg-white/5"
+          style="border: 1px solid rgba(255, 255, 255, 0.1)"
         >
-          Contact Me
+          Contact me
         </a>
+      </div>
+
+      <!-- Social links — branded buttons -->
+      <div class="flex flex-wrap gap-2 pt-2">
+        <ng-container *ngFor="let link of socialLinks">
+          <!-- LinkedIn -->
+          <a
+            *ngIf="link.icon === 'linkedin'"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-medium transition-all duration-200"
+            style="
+              background: rgba(10, 102, 194, 0.12);
+              border: 1px solid rgba(10, 102, 194, 0.3);
+              color: #5ba3d9;
+            "
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+            <span class="group-hover:text-[#7bb8e8] transition-colors">{{ link.name }}</span>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            *ngIf="link.icon === 'github'"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-medium transition-all duration-200"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              color: rgba(255, 255, 255, 0.6);
+            "
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            <span class="group-hover:text-white transition-colors">{{ link.name }}</span>
+          </a>
+
+          <!-- X -->
+          <a
+            *ngIf="link.icon === 'x'"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-medium transition-all duration-200"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              color: rgba(255, 255, 255, 0.6);
+            "
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+              />
+            </svg>
+            <span class="group-hover:text-white transition-colors">{{ link.name }}</span>
+          </a>
+
+          <!-- YouTube -->
+          <a
+            *ngIf="link.icon === 'youtube'"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-medium transition-all duration-200"
+            style="
+              background: rgba(255, 0, 0, 0.08);
+              border: 1px solid rgba(255, 0, 0, 0.2);
+              color: #f87171;
+            "
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              />
+            </svg>
+            <span class="group-hover:text-red-400 transition-colors">{{ link.name }}</span>
+          </a>
+
+          <!-- TikTok -->
+          <a
+            *ngIf="link.icon === 'tiktok'"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-medium transition-all duration-200"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              color: rgba(255, 255, 255, 0.6);
+            "
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"
+              />
+            </svg>
+            <span class="group-hover:text-white transition-colors">{{ link.name }}</span>
+          </a>
+        </ng-container>
       </div>
     </div>
 
-    <div class="relative mt-10 md:mt-0 animate-fadeInUp">
-      <div
-        class="absolute -inset-8 rounded-full opacity-30"
-        style="
-          background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
-          filter: blur(20px);
-        "
-      ></div>
+    <!-- RIGHT: Tech grid -->
+    <div class="relative animate-fadeInUp flex flex-col gap-6">
+      <!-- Section label -->
+      <p class="text-xs font-medium tracking-[0.2em] text-white/20 uppercase">Tech stack</p>
 
-      <div class="relative grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
+      <div class="grid grid-cols-3 gap-3">
         <div
-          *ngFor="let tech of technologies; let i = index"
-          class="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/8 bg-white/3 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/8 animate-fadeInUp"
+          *ngFor="let tech of technologies"
+          class="group flex flex-col items-center justify-center gap-3 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 cursor-default"
+          style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07)"
         >
           <ng-container [ngSwitch]="tech.icon">
             <img
               *ngSwitchCase="'angular'"
               src="assets/images/angular_gradient.png"
               alt="Angular"
-              class="h-10 w-10"
+              class="h-9 w-9"
             />
             <img
               *ngSwitchCase="'csharp'"
               src="assets/images/csharp.png"
-              alt="csharp"
-              class="h-14 w-14"
+              alt="C#"
+              class="h-12 w-12"
             />
             <svg
               *ngSwitchCase="'typescript'"
-              class="h-10 w-10"
+              class="h-9 w-9"
               viewBox="0 0 24 24"
               fill="currentColor"
               style="color: #3178c6"
@@ -110,18 +254,18 @@
             </svg>
             <svg
               *ngSwitchCase="'tailwind'"
-              class="h-10 w-10"
+              class="h-9 w-9"
               viewBox="0 0 24 24"
               fill="currentColor"
               style="color: #06b6d4"
             >
               <path
-                d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
+                d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C16.337,6.182,14.976,4.8,12.001,4.8zM6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C10.337,13.382,8.976,12,6.001,12z"
               />
             </svg>
             <svg
               *ngSwitchCase="'git'"
-              class="h-10 w-10"
+              class="h-9 w-9"
               viewBox="0 0 24 24"
               fill="currentColor"
               style="color: #f05032"
@@ -132,8 +276,8 @@
             </svg>
             <div
               *ngSwitchCase="'dotnet'"
-              class="flex items-center justify-center h-10 w-10 rounded-lg text-lg font-bold p-6"
-              style="background: linear-gradient(135deg, #512bd4 0%, #7b3ff2 100%); color: white"
+              class="flex items-center justify-center h-10 w-10 rounded-xl text-sm font-bold"
+              style="background: linear-gradient(135deg, #512bd4, #7b3ff2); color: white"
             >
               .NET
             </div>
@@ -143,111 +287,12 @@
           </ng-container>
 
           <span
-            class="text-xs font-light text-white/40 group-hover:text-white/80 transition-colors tracking-wide"
+            class="text-[11px] font-medium text-white/30 group-hover:text-white/60 transition-colors tracking-wide"
           >
             {{ tech.name }}
           </span>
         </div>
       </div>
     </div>
-
-    <!-- Social mobile -->
-    <div class="md:hidden mt-8 flex justify-center">
-      <div class="animate-float">
-        <div
-          class="flex gap-3 rounded-2xl border border-white/8 bg-white/3 px-4 py-3 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.6)] -translate-y-6"
-        >
-          <ng-container
-            *ngTemplateOutlet="socialIcon; context: { showTooltip: false }"
-          ></ng-container>
-        </div>
-      </div>
-    </div>
   </main>
-
-  <ng-template #socialIcon let-showTooltip="showTooltip">
-    <a
-      *ngFor="let link of socialLinks"
-      [href]="link.url"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/8 bg-white/3 text-white/40 backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:border-white/20 hover:bg-white/8 hover:text-white"
-    >
-      <ng-container [ngSwitch]="link.icon">
-        <svg
-          *ngSwitchCase="'linkedin'"
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="transition-transform group-hover:scale-110"
-        >
-          <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-          />
-        </svg>
-        <svg
-          *ngSwitchCase="'github'"
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="transition-transform group-hover:scale-110"
-        >
-          <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-          />
-        </svg>
-        <svg
-          *ngSwitchCase="'tiktok'"
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="transition-transform group-hover:scale-110"
-        >
-          <path
-            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"
-          />
-        </svg>
-        <svg
-          *ngSwitchCase="'youtube'"
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="transition-transform group-hover:scale-110"
-        >
-          <path
-            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
-          />
-        </svg>
-        <svg
-          *ngSwitchCase="'x'"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="transition-transform group-hover:scale-110"
-        >
-          <path
-            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-          />
-        </svg>
-        <span *ngSwitchDefault>?</span>
-      </ng-container>
-
-      <span
-        *ngIf="showTooltip"
-        class="absolute left-14 whitespace-nowrap rounded-lg border border-white/10 bg-black/90 px-3 py-1.5 text-xs font-light text-white/70 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 tracking-wide"
-      >
-        {{ link.name }}
-      </span>
-    </a>
-  </ng-template>
 </section>
