@@ -1,16 +1,16 @@
 <div class="flex flex-col h-screen bg-black text-white">
   <!-- NAVBAR MEJORADA -->
-  <header class="sticky top-0 z-[100]">
+  <header
+    class="sticky top-0 z-[100]"
+    style="
+      background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(5, 5, 5, 0.85));
+      backdrop-filter: blur(20px);
+    "
+  >
     <!-- Línea de acento superior -->
     <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-    <nav
-      class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between"
-      style="
-        background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(5, 5, 5, 0.85));
-        backdrop-filter: blur(20px);
-      "
-    >
+    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
       <!-- Logo / Avatar -->
       <a routerLink="/" class="group relative flex-shrink-0">
         <div
