@@ -58,6 +58,7 @@ export class Projects {
       ],
       images: [
         'assets/images/inspecciones1.png',
+        'assets/images/inspecciones4.png',
         'assets/images/inspecciones2.png',
         'assets/images/inspecciones3.png',
       ],
