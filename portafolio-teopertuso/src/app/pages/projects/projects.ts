@@ -39,6 +39,30 @@ export class Projects {
       ],
       companyProject: true,
     },
+    {
+      id: 3,
+      title: 'Quality Control – Inspection System',
+      subtitle: 'Dynamic inspections with offline support',
+      description:
+        'Internal quality control system for dynamic inspection workflows, allowing full configuration of attributes, procedures, etc. Includes offline-first support with automatic synchronization, audit workflows with full traceability, and features such as conditional comments, Excel export, and PDF reporting. Built as a full-stack solution for real production use.',
+      technologies: [
+        'SQL Server',
+        '.NET',
+        'EF',
+        'Angular',
+        'TypeScript',
+        'Tailwindcss',
+        'HTML',
+        'CSS',
+        'Dexie',
+      ],
+      images: [
+        'assets/images/inspecciones1.png',
+        'assets/images/inspecciones2.png',
+        'assets/images/inspecciones3.png',
+      ],
+      companyProject: true,
+    },
   ];
 
   openProject(project: Project) {
